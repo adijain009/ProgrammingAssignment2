@@ -1,18 +1,15 @@
 ## The following matrix will compte the inverse of a matrix and stores it in a cache.
 
 ## makeCacheMatrix is going to make a  matrix, and will returns a list of subfunctions either 
-##  setting  value of the matrix
-##  getting  current value of the matrix
-##  getting inverse of the matrix
-##  getting  inverse of the matrix
+##  setting  value of the matrix,getting  current value of the matrix,getting inverse of the matrix,getting  inverse of the matrix
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(y = matrix()) {
        inv <- NULL
-        set <- function(y) {
-        x <<- y
+        set <- function(z) {
+        y <<- z
         inv <<- NULL
     }
-       get <- function() x
+       get <- function() y
        setinv <- function(inverse) inv <<- inverse 
        getinv <- function() inv
             list(set = set, get = get,
@@ -23,16 +20,16 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## cacheSolve checks  if an inverse of the matrix is already  computed and cached. 
 ### If yes, it returns the cached value. Otherwise, it computes the inverse.
-cacheSolve <- function(x, ...) {
-        ## Return matix inverse of 'x'
-          inv <- x$getinv()
+cacheSolve <- function(y, ...) {
+        ## Return matix inverse of 'y'
+          inv <- y$getinv()
           if(!is.null(inv)) {
              message("getting cached data")
              return(inv)
     }
-       data <- x$get()
+       data <- y$get()
        inv <- solve(data, ...)
-        x$setinv(inv)
+        y$setinv(inv)
          inv
 }
 
