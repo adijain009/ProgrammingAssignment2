@@ -1,7 +1,10 @@
 ## The following matrix will compte the inverse of a matrix and stores it in a cache.
 
 ## makeCacheMatrix is going to make a  matrix, and will returns a list of subfunctions either 
-##  setting  value of the matrix,getting  current value of the matrix,getting inverse of the matrix,getting  inverse of the matrix
+##  1. setting  value of the matrix
+## 2. getting  current value of the matrix
+## 3. getting inverse of the matrix
+## 4. getting  inverse of the matrix
 
 makeCacheMatrix <- function(y = matrix()) {
        inv <- NULL
